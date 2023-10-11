@@ -252,6 +252,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aGO-0G-a3Q"/>
+                    <connections>
+                        <outlet property="timeLabel" destination="sHu-4a-4Y7" id="74a-bd-n8c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8v-FR-jH9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
