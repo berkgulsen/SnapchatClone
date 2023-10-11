@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		39C0768E9D107ACAB2F7FD2B /* Pods_SnapchatClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2881A4608393892AB3F9CC /* Pods_SnapchatClone.framework */; };
 		7F0BF7FF2AD59B3800E3D574 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F0BF7FE2AD59B3800E3D574 /* GoogleService-Info.plist */; };
+		7F980E292AD6D6A400322A6C /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F980E282AD6D6A400322A6C /* FeedVC.swift */; };
+		7F980E2B2AD6D6ED00322A6C /* UploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F980E2A2AD6D6ED00322A6C /* UploadVC.swift */; };
+		7F980E2D2AD6D70100322A6C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F980E2C2AD6D70100322A6C /* SettingsVC.swift */; };
+		7F980E312AD6EAC100322A6C /* SnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F980E302AD6EAC100322A6C /* SnapVC.swift */; };
 		7FE880ED2AD5888A00C98265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE880EC2AD5888A00C98265 /* AppDelegate.swift */; };
 		7FE880EF2AD5888A00C98265 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE880EE2AD5888A00C98265 /* SceneDelegate.swift */; };
 		7FE880F12AD5888A00C98265 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE880F02AD5888A00C98265 /* SignInVC.swift */; };
@@ -19,6 +23,10 @@
 
 /* Begin PBXFileReference section */
 		7F0BF7FE2AD59B3800E3D574 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F980E282AD6D6A400322A6C /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		7F980E2A2AD6D6ED00322A6C /* UploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVC.swift; sourceTree = "<group>"; };
+		7F980E2C2AD6D70100322A6C /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		7F980E302AD6EAC100322A6C /* SnapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapVC.swift; sourceTree = "<group>"; };
 		7FE880E92AD5888A00C98265 /* SnapchatClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE880EC2AD5888A00C98265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FE880EE2AD5888A00C98265 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +61,27 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7F980E2E2AD6D74000322A6C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				7FE880EE2AD5888A00C98265 /* SceneDelegate.swift */,
+				7FE880EC2AD5888A00C98265 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		7F980E2F2AD6D75900322A6C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7FE880F02AD5888A00C98265 /* SignInVC.swift */,
+				7F980E282AD6D6A400322A6C /* FeedVC.swift */,
+				7F980E2A2AD6D6ED00322A6C /* UploadVC.swift */,
+				7F980E2C2AD6D70100322A6C /* SettingsVC.swift */,
+				7F980E302AD6EAC100322A6C /* SnapVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		7FE880E02AD5888A00C98265 = {
 			isa = PBXGroup;
 			children = (
@@ -74,9 +103,8 @@
 		7FE880EB2AD5888A00C98265 /* SnapchatClone */ = {
 			isa = PBXGroup;
 			children = (
-				7FE880EC2AD5888A00C98265 /* AppDelegate.swift */,
-				7FE880EE2AD5888A00C98265 /* SceneDelegate.swift */,
-				7FE880F02AD5888A00C98265 /* SignInVC.swift */,
+				7F980E2F2AD6D75900322A6C /* ViewControllers */,
+				7F980E2E2AD6D74000322A6C /* Delegates */,
 				7F0BF7FE2AD59B3800E3D574 /* GoogleService-Info.plist */,
 				7FE880F22AD5888A00C98265 /* Main.storyboard */,
 				7FE880F52AD5888C00C98265 /* Assets.xcassets */,
@@ -210,9 +238,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F980E292AD6D6A400322A6C /* FeedVC.swift in Sources */,
 				7FE880F12AD5888A00C98265 /* SignInVC.swift in Sources */,
 				7FE880ED2AD5888A00C98265 /* AppDelegate.swift in Sources */,
+				7F980E2B2AD6D6ED00322A6C /* UploadVC.swift in Sources */,
+				7F980E312AD6EAC100322A6C /* SnapVC.swift in Sources */,
 				7FE880EF2AD5888A00C98265 /* SceneDelegate.swift in Sources */,
+				7F980E2D2AD6D70100322A6C /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
