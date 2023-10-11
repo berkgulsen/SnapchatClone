@@ -130,10 +130,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kpU-XS-0AX">
                                 <rect key="frame" x="16" y="20" width="361" height="639"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8Z-Xh-dYA">
-                                <rect key="frame" x="144" y="707" width="104" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8Z-Xh-dYA">
+                                <rect key="frame" x="144" y="707" width="103" height="46"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="d6y-8n-DIy"/>
+                                    <constraint firstAttribute="height" constant="46" id="yVd-9e-1Ca"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Upload"/>
@@ -145,13 +145,13 @@
                         <viewLayoutGuide key="safeArea" id="36g-v4-XOG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Y8Z-Xh-dYA" firstAttribute="top" secondItem="kpU-XS-0AX" secondAttribute="bottom" constant="48" id="9Jr-ia-zzq"/>
-                            <constraint firstItem="kpU-XS-0AX" firstAttribute="centerX" secondItem="Y8Z-Xh-dYA" secondAttribute="centerX" id="FBP-ke-jBa"/>
-                            <constraint firstItem="kpU-XS-0AX" firstAttribute="top" secondItem="36g-v4-XOG" secondAttribute="top" constant="20" id="Yig-ai-mNc"/>
-                            <constraint firstItem="36g-v4-XOG" firstAttribute="bottom" secondItem="Y8Z-Xh-dYA" secondAttribute="bottom" constant="50" id="be5-iR-1vw"/>
-                            <constraint firstItem="Y8Z-Xh-dYA" firstAttribute="leading" secondItem="36g-v4-XOG" secondAttribute="leading" constant="144" id="eAB-Mv-a4P"/>
-                            <constraint firstItem="kpU-XS-0AX" firstAttribute="leading" secondItem="EAZ-8K-x6t" secondAttribute="leadingMargin" id="jCO-2t-XSD"/>
-                            <constraint firstItem="kpU-XS-0AX" firstAttribute="trailing" secondItem="EAZ-8K-x6t" secondAttribute="trailingMargin" id="uyK-fS-egP"/>
+                            <constraint firstItem="36g-v4-XOG" firstAttribute="trailing" secondItem="Y8Z-Xh-dYA" secondAttribute="trailing" constant="146" id="5lw-L7-vwW"/>
+                            <constraint firstItem="36g-v4-XOG" firstAttribute="bottom" secondItem="Y8Z-Xh-dYA" secondAttribute="bottom" constant="50" id="Grk-zz-Uma"/>
+                            <constraint firstItem="kpU-XS-0AX" firstAttribute="leading" secondItem="EAZ-8K-x6t" secondAttribute="leadingMargin" id="Mfq-JX-hME"/>
+                            <constraint firstItem="kpU-XS-0AX" firstAttribute="top" secondItem="36g-v4-XOG" secondAttribute="top" constant="20" id="cQc-bd-g15"/>
+                            <constraint firstItem="Y8Z-Xh-dYA" firstAttribute="leading" secondItem="36g-v4-XOG" secondAttribute="leading" constant="144" id="hjx-o9-Wza"/>
+                            <constraint firstItem="Y8Z-Xh-dYA" firstAttribute="top" secondItem="kpU-XS-0AX" secondAttribute="bottom" constant="48" id="oRW-rm-UZr"/>
+                            <constraint firstItem="kpU-XS-0AX" firstAttribute="trailing" secondItem="EAZ-8K-x6t" secondAttribute="trailingMargin" id="uBH-6h-oT5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="plus.app" catalog="system" id="iRG-Bw-oaX"/>
@@ -171,8 +171,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubt-Gg-dvq">
-                                <rect key="frame" x="144" y="403" width="104" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubt-Gg-dvq">
+                                <rect key="frame" x="144" y="707" width="103" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="kkJ-gF-fml"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Logout"/>
                                 <connections>
@@ -183,17 +186,16 @@
                         <viewLayoutGuide key="safeArea" id="hyY-ne-whL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ubt-Gg-dvq" firstAttribute="centerY" secondItem="HhL-tP-aMC" secondAttribute="centerY" id="8kW-7e-GaY"/>
-                            <constraint firstItem="ubt-Gg-dvq" firstAttribute="centerX" secondItem="HhL-tP-aMC" secondAttribute="centerX" id="NTx-EG-VYj"/>
-                            <constraint firstItem="ubt-Gg-dvq" firstAttribute="top" secondItem="hyY-ne-whL" secondAttribute="top" constant="403" id="Zi9-Ki-bgd"/>
-                            <constraint firstItem="ubt-Gg-dvq" firstAttribute="leading" secondItem="hyY-ne-whL" secondAttribute="leading" constant="144" id="nuY-xe-Bh2"/>
+                            <constraint firstItem="ubt-Gg-dvq" firstAttribute="leading" secondItem="hyY-ne-whL" secondAttribute="leading" constant="144" id="8vO-EH-bZj"/>
+                            <constraint firstItem="hyY-ne-whL" firstAttribute="trailing" secondItem="ubt-Gg-dvq" secondAttribute="trailing" constant="146" id="dKf-aP-qYd"/>
+                            <constraint firstItem="hyY-ne-whL" firstAttribute="bottom" secondItem="ubt-Gg-dvq" secondAttribute="bottom" constant="50" id="xwv-qv-DlX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="jrr-NX-Aoh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vq2-k6-CzY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1807" y="663"/>
+            <point key="canvasLocation" x="1807" y="696"/>
         </scene>
         <!--Feed-->
         <scene sceneID="muY-DM-dTI">
