@@ -58,18 +58,41 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate & UINavigation
                             
                             let firestore = Firestore.firestore()
                             
-                            let snapDictionary = [
-                                "imageUrl": imageUrl!,
-                                "snapOwner": UserSingleton.sharedUserInfo.username,
-                                "Date": FieldValue.serverTimestamp()
-                            ]
-                            
-                            firestore.collection("Snaps").addDocument(data: snapDictionary) { error in
+                            firestore.collection("Snaps").whereField("snapOwner", isEqualTo: UserSingleton.sharedUserInfo.username).getDocuments { snapshot, error in
                                 if error != nil {
                                     self.makeAlert(title: "Error", message: error?.localizedDescription ?? "error")
                                 } else {
-                                    self.tabBarController?.selectedIndex = 0
-                                    self.imageView.image = UIImage(named: "taphere")
+                                    if snapshot?.isEmpty == false && snapshot != nil {
+                                        for document in snapshot!.documents {
+                                            let documentId = document.documentID
+                                            
+                                            if var imageUrlArray = document.get("imageUrlArray") as? [String]{
+                                                imageUrlArray.append(imageUrl!)
+                                                let additionalDictionary = ["imageUrlArray": imageUrlArray] as [String : Any]
+                                                firestore.collection("Snaps").document(documentId).setData(additionalDictionary, merge: true) { error in
+                                                    if error == nil {
+                                                        self.tabBarController?.selectedIndex = 0
+                                                        self.imageView.image = UIImage(named: "taphere")
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    } else {
+                                        let snapDictionary = [
+                                            "imageUrlArray": [imageUrl!],
+                                            "snapOwner": UserSingleton.sharedUserInfo.username,
+                                            "Date": FieldValue.serverTimestamp()
+                                        ]
+                                        
+                                        firestore.collection("Snaps").addDocument(data: snapDictionary) { error in
+                                            if error != nil {
+                                                self.makeAlert(title: "Error", message: error?.localizedDescription ?? "error")
+                                            } else {
+                                                self.tabBarController?.selectedIndex = 0
+                                                self.imageView.image = UIImage(named: "taphere")
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
