@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UploadVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
@@ -34,5 +35,53 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate & UINavigation
         
         imageView.image = info[.originalImage] as? UIImage
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func uploadClicked(_ sender: Any) {
+        
+        let storage = Storage.storage()
+        let storageReference = storage.reference()
+        
+        let mediaFolder = storageReference.child("media")
+        
+        if let data = imageView.image?.jpegData(compressionQuality: 0.5) {
+            let uuid = UUID().uuidString
+            
+            let imageReference = mediaFolder.child("\(uuid).jpg")
+            
+            imageReference.putData(data, metadata: nil) { metadata, error in
+                if error != nil {
+                    self.makeAlert(title: "Error", message: error?.localizedDescription ?? "error")
+                } else {
+                    imageReference.downloadURL { url, error in
+                        if error == nil {
+                            let imageUrl = url?.absoluteString
+                            
+                            let firestore = Firestore.firestore()
+                            
+                            let snapDictionary = [
+                                "imageUrl": imageUrl!,
+                                "snapOwner": UserSingleton.sharedUserInfo.username,
+                                "Date": FieldValue.serverTimestamp()
+                            ]
+                            
+                            firestore.collection("Snaps").addDocument(data: snapDictionary) { error in
+                                if error != nil {
+                                    self.makeAlert(title: "Error", message: error?.localizedDescription ?? "error")
+                                } else {
+                                    self.tabBarController?.selectedIndex = 0
+                                    self.imageView.image = UIImage(named: "taphere")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func makeAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

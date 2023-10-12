@@ -138,7 +138,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Upload"/>
                                 <connections>
-                                    <action selector="uploadClicked:" destination="cpX-xo-umS" eventType="touchUpInside" id="tCM-DV-IT6"/>
+                                    <action selector="uploadClicked:" destination="cpX-xo-umS" eventType="touchUpInside" id="p1l-em-ymn"/>
                                 </connections>
                             </button>
                         </subviews>
