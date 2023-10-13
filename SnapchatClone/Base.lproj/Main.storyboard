@@ -208,39 +208,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Loe-ti-RLQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Loe-ti-RLQ">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="400" id="8Pf-uO-WJ7" customClass="FeedCell" customModule="SnapchatClone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="400"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="410" id="8Pf-uO-WJ7" customClass="FeedCell" customModule="SnapchatClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="410"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Pf-uO-WJ7" id="3Zs-Xs-YEU">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="410"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkt-jM-IQ5">
-                                                    <rect key="frame" x="20" y="11" width="353" height="30"/>
+                                                    <rect key="frame" x="20" y="10" width="353" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AvA-0k-sjt">
-                                                    <rect key="frame" x="20" y="49" width="353" height="353"/>
+                                                    <rect key="frame" x="20" y="41" width="353" height="353"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="353" id="R3m-Es-JBk"/>
-                                                        <constraint firstAttribute="height" constant="353" id="aCo-hl-5dy"/>
+                                                        <constraint firstAttribute="height" constant="353" id="R37-AW-doG"/>
+                                                        <constraint firstAttribute="width" constant="353" id="T1M-5W-XNc"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="nkt-jM-IQ5" firstAttribute="leading" secondItem="AvA-0k-sjt" secondAttribute="leading" id="OtH-0F-y3C"/>
-                                                <constraint firstItem="nkt-jM-IQ5" firstAttribute="top" secondItem="3Zs-Xs-YEU" secondAttribute="topMargin" id="PPg-aA-HQS"/>
-                                                <constraint firstItem="AvA-0k-sjt" firstAttribute="top" secondItem="nkt-jM-IQ5" secondAttribute="bottom" constant="8" id="S5H-tU-kSO"/>
-                                                <constraint firstItem="nkt-jM-IQ5" firstAttribute="trailing" secondItem="AvA-0k-sjt" secondAttribute="trailing" id="UBF-1y-GYk"/>
-                                                <constraint firstAttribute="bottom" secondItem="AvA-0k-sjt" secondAttribute="bottom" constant="5" id="iHj-Wh-eSo"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="AvA-0k-sjt" secondAttribute="bottom" constant="-13" id="sUn-tW-1ve"/>
-                                                <constraint firstItem="nkt-jM-IQ5" firstAttribute="leading" secondItem="3Zs-Xs-YEU" secondAttribute="leadingMargin" id="u0n-hw-6U9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="AvA-0k-sjt" secondAttribute="bottom" constant="5" id="2CD-Uc-3PB"/>
+                                                <constraint firstItem="AvA-0k-sjt" firstAttribute="top" secondItem="nkt-jM-IQ5" secondAttribute="bottom" constant="10" id="DMK-oE-Cfa"/>
+                                                <constraint firstAttribute="trailing" secondItem="nkt-jM-IQ5" secondAttribute="trailing" constant="20" symbolic="YES" id="PRH-PP-1Qb"/>
+                                                <constraint firstItem="nkt-jM-IQ5" firstAttribute="leading" secondItem="3Zs-Xs-YEU" secondAttribute="leading" constant="20" symbolic="YES" id="TJn-MX-lD2"/>
+                                                <constraint firstItem="AvA-0k-sjt" firstAttribute="trailing" secondItem="3Zs-Xs-YEU" secondAttribute="trailingMargin" id="VUP-yB-EuX"/>
+                                                <constraint firstItem="AvA-0k-sjt" firstAttribute="leading" secondItem="3Zs-Xs-YEU" secondAttribute="leadingMargin" id="xwK-Mo-rcN"/>
+                                                <constraint firstItem="nkt-jM-IQ5" firstAttribute="top" secondItem="3Zs-Xs-YEU" secondAttribute="top" constant="10" id="z2P-cd-04H"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -253,12 +254,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UIQ-od-7YB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Loe-ti-RLQ" firstAttribute="centerX" secondItem="Q5w-wf-vj5" secondAttribute="centerX" id="9ej-zY-CQA"/>
-                            <constraint firstItem="Loe-ti-RLQ" firstAttribute="top" secondItem="UIQ-od-7YB" secondAttribute="top" id="HFe-V2-pNX"/>
-                            <constraint firstItem="Loe-ti-RLQ" firstAttribute="leading" secondItem="UIQ-od-7YB" secondAttribute="leading" id="fLf-jB-dzu"/>
-                            <constraint firstItem="Loe-ti-RLQ" firstAttribute="bottom" secondItem="UIQ-od-7YB" secondAttribute="bottom" id="mip-dV-bFW"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" id="OFR-Qb-let"/>
                     <connections>
