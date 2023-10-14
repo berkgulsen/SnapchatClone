@@ -11,7 +11,6 @@ import ImageSlideshow
 class SnapVC: UIViewController {
     
     var selectedSnap: Snap?
-    var selectedTime: Int?
     var inputArray = [SDWebImageSource]()
     
     @IBOutlet weak var timeLabel: UILabel!
@@ -21,9 +20,6 @@ class SnapVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        if let time = selectedTime {
-            timeLabel.text = "Time Left: \(time)"
-        }
         
         if let snap = selectedSnap {
             for imageUrl in snap.imageUrlArray {
@@ -31,7 +27,7 @@ class SnapVC: UIViewController {
             }
         }
         
-        let imageSlideshow = ImageSlideshow(frame: CGRect(x: 10, y: 10, width: self.view.frame.width * 0.95, height: self.view.frame.height * 0.90))
+        let imageSlideshow = ImageSlideshow(frame: CGRect(x: 10, y: 70, width: self.view.frame.width * 0.95, height: self.view.frame.height * 0.70))
         imageSlideshow.backgroundColor = UIColor.white
         
         let pageIndicator = UIPageControl()
@@ -42,6 +38,7 @@ class SnapVC: UIViewController {
         imageSlideshow.contentScaleMode = UIViewContentMode.scaleAspectFit
         imageSlideshow.setImageInputs(inputArray)
         self.view.addSubview(imageSlideshow)
+        self.view.addSubview(timeLabel)
     }
     
 
